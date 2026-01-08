@@ -90,21 +90,29 @@ All figures are saved in the `figures/` directory:
 - Shows the actual distribution of all Spotify song tempos
 - **Interpretation**: The foundation for understanding what we're sampling from
 
+![Population Distribution](figures/01_population_distribution.png)
+
 ### 2. **Sampling Distribution - Mean** (`02_sampling_distribution_mean.png`)
 - Histogram of 500 sample means (each based on n=30)
 - **Interpretation**: Demonstrates CLT—notice the normal-like bell curve
 - Green line = population mean, Orange line = mean of sample means
 - **Key insight**: The two lines should be very close (unbiased estimator)
 
+![Sampling Distribution - Mean](figures/02_sampling_distribution_mean.png)
+
 ### 3. **Sampling Distribution - Minimum** (`02_sampling_distribution_minimum.png`)
 - Distribution of minimum tempo values across samples
 - **Interpretation**: Shows how a different statistic behaves
 - Less symmetric than the mean (not a linear combination of many values)
 
+![Sampling Distribution - Minimum](figures/02_sampling_distribution_minimum.png)
+
 ### 4. **Sampling Distribution - Variance** (`02_sampling_distribution_variance.png`)
 - Distribution of variance estimates across samples
 - **Interpretation**: Demonstrates sampling variability in spread measurements
 - Useful for understanding confidence in variability estimates
+
+![Sampling Distribution - Variance](figures/02_sampling_distribution_variance.png)
 
 ### 5. **Comprehensive Analysis** (`03_comprehensive_analysis.png`)
 A 2×2 multi-panel figure showing:
@@ -127,6 +135,8 @@ A 2×2 multi-panel figure showing:
   - Shows full distribution shape
   - Displays quartiles and central tendency simultaneously
   - Identifies multimodality (if present)
+
+![Comprehensive Analysis](figures/03_comprehensive_analysis.png)
 
 ---
 
