@@ -4,7 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
-import codecademylib3
 
 # task 1: load in the spotify dataset
 spotify_data = pd.read_csv('spotify_data.csv')
@@ -23,7 +22,7 @@ sampling_distribution(song_tempos, 30, 'Variance')
 # task 13: calculate the population mean and standard deviation
 population_mean = np.mean(song_tempos)
 population_std = np.std(song_tempos)
-print(f'Mean = {population_mean:.2f}\nSTD = 	{population_std:.2f}')
+print(f'Mean = {population_mean:.2f}\nSTD = {population_std:.2f}')
 # task 14: calculate the standard error
 standard_error = population_std/(30**.5)
 print(f'Standard error = {standard_error:.2f}')
