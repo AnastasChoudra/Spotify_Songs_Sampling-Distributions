@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
+import os
 
 def choose_statistic(x, sample_stat_text):
     # calculate mean if the text is "Mean"
@@ -19,17 +20,31 @@ def choose_statistic(x, sample_stat_text):
     else:
         raise Exception('Make sure to input "Mean", "Minimum", or "Variance"')
 
-def population_distribution(population_data):
+def population_distribution(population_data, figures_dir='figures'):
+    # Create figures directory if it doesn't exist
+    if not os.path.exists(figures_dir):
+        os.makedirs(figures_dir)
+    
     # plot the population distribution
     sns.histplot(population_data, stat='density')
     # informative title for the distribution
     plt.title(f"Population Distribution")
     # remove None label
     plt.xlabel('')
+    
+    # Save figure before showing
+    fig_path = os.path.join(figures_dir, '01_population_distribution.png')
+    plt.savefig(fig_path, dpi=300, bbox_inches='tight')
+    print(f"Saved: {fig_path}")
+    
     plt.show()
     plt.clf()
 
-def sampling_distribution(population_data, samp_size, stat):
+def sampling_distribution(population_data, samp_size, stat, figures_dir='figures'):
+    # Create figures directory if it doesn't exist
+    if not os.path.exists(figures_dir):
+        os.makedirs(figures_dir)
+    
     # list that will hold all the sample statistics
     sample_stats = []
     for i in range(500):
@@ -49,5 +64,12 @@ def sampling_distribution(population_data, samp_size, stat):
     # plot the mean of the chosen sample statistic for the sampling distribution
     plt.axvline(np.mean(sample_stats), color='orange', linestyle='dashed', label=f'Mean of the Sample {stat}s')
     plt.legend()
+    
+    # Save figure before showing
+    fig_filename = f"02_sampling_distribution_{stat.lower()}.png"
+    fig_path = os.path.join(figures_dir, fig_filename)
+    plt.savefig(fig_path, dpi=300, bbox_inches='tight')
+    print(f"Saved: {fig_path}")
+    
     plt.show()
     plt.clf()
